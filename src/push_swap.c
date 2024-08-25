@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cestevez <cestevez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cestevez <cestevez@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 01:36:23 by cestevez          #+#    #+#             */
-/*   Updated: 2023/07/08 00:01:33 by cestevez         ###   ########.fr       */
+/*   Updated: 2024/08/26 00:52:24 by cestevez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,6 @@ void	sort_three(t_stack *stack)
 //or if stack has to be rotated
 void	big_sort(t_stack *stack)
 {
-	int	i;
-
-	i = 0;
 	while (stack->size_a > 3)
 	{
 		calculate_moves_ab(stack, stack->size_a);
@@ -78,9 +75,6 @@ void	big_sort(t_stack *stack)
 
 void	push_swap(t_stack *stack)
 {
-	int	i;
-
-	i = 0;
 	if (check_order_a(stack) != 0)
 	{
 		if (stack->size_a <= 3)
@@ -112,6 +106,7 @@ int	main(int argc, char **argv)
 	{
 		if (argc == 2 && validate_argument(argv) == 0)
 			ft_error();
+		write(2, "Example of usage: ./push_swap 776 1 3 0 52 11\n", 47);
 		exit(0);
 	}
 	if (validate_argument(argv) == 0)
